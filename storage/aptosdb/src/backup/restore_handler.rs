@@ -117,4 +117,8 @@ impl RestoreHandler {
             .get_latest_transaction_info_option()?
             .map_or(0, |(ver, _txn_info)| ver + 1))
     }
+
+    pub fn set_latest_state_version(&self, version: Version) {
+        self.state_store.set_latest_version(version)
+    }
 }

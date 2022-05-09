@@ -237,6 +237,7 @@ fn restore_state_to_db(
         receiver.add_chunk(chunk, proof).unwrap();
     }
     receiver.finish().unwrap();
+    rh.set_latest_state_version(version);
 }
 
 #[test]
